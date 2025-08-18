@@ -8,3 +8,8 @@ We can update the update the system and it's dependencies by running this comman
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
+<img src="https://imgur.com/5uNTlTg" height="80%" width="80%" alt="Building Network Lab"/>
+
+After doing so, our system will update. A restart may be required.
+
+Next, let's configure a simple firewall. To do this, I will 
