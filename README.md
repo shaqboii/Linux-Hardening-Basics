@@ -4,4 +4,6 @@ This project demonstrates basic system hardening, setting up a basic firewall, a
 
 <h2>Step 1: System Update</h2>
 We can update the update the system and it's dependencies by running this command in the terminal:
-```sudo apt update && sudo apt upgrade -y```
+```Linux
+sudo apt update && sudo apt upgrade -y
+```
