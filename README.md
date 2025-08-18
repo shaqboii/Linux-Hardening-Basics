@@ -1,2 +1,4 @@
 # Linux-Hardening-Basics
-Project demonstrating general system hardening, implementing a basic firewall, and controlling user accounts.
+This project demonstrates basic system hardening, setting up a basic firewall, account creation and controlling their privileges. 
+
+We do this by
