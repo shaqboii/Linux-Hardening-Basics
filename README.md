@@ -72,7 +72,7 @@ Let's assume that this testuser was a part of our organization and had admin pri
 
 When I log of Ubuntu, there is a new account that I can log into. Log into the testuser account.
 
-Now, let's assume that that this user was feeling a little malicious, and wanted to mess with us. What if they decided to mess with our firewall?
+Now, let's assume that that this user was feeling a little malicious and wanted to mess with us. What if they decided to mess with our firewall?
 
 In this scenario, testuser will deny SSH, or port 22 traffic, on the firewall. To do this, testuser will escalate themselves to a sudo user, and then run the following:
 
@@ -80,4 +80,50 @@ In this scenario, testuser will deny SSH, or port 22 traffic, on the firewall. T
 sudo ufw deny 22/tcp
 ```
 <img src="https://i.imgur.com/CAsZ7y3.png" height="80%" width="80%" alt="Linux Hardening Lab"/>
+
+Now I, as the network admin, would typically be notified of this. I will need to verify that our firewall rule has been changed. To do this, I will run:
+
+```bash
+sudo ufw status
+```
+<img src="https://i.imgur.com/gjYRzTh.png" height="80%" width="80%" alt="Linux Hardening Lab"/>
+
+As we can see, SSH traffic is denied. Now that I have verified that our firewall has been changed, I'll lock testuser's account to prevent any further damage. I will run:
+
+```bash
+sudo passwd -l testuser
+```
+
+This will lock the account. I can verify that the account is locked by checking the ```/etc/shadow``` file.
+
+<img src="https://i.imgur.com/32uQBQS.png" height="80%" width="80%" alt="Linux Hardening Lab"/>
+
+Before showing the encryption flag, there is an exclamation point. This means that the account is locked, and cannot be logged into. Now that we have secured our environment from testuser, let's make amends to our firewall.
+
+As we have done before, we can re-enable SSH traffic on our firewall by running ```sudo ufw allow 22/tcp```. After doing so, let's verify and check that it's up by running ```sudo ufw status```.
+
+<img src="https://i.imgur.com/IJhdoL5.png" height="80%" width="80%" alt="Linux Hardening Lab"/>
+
+As we can see, the SSH traffic is enabled and up as intended. 
+
+After giving testuser a little "disciplinary action", they have apologized for their actions. To show our mercy, let's unlock their account.
+
+```bash
+sudo passwd -u testuser
+```
+<img src="https://i.imgur.com/45OoGGC.png" height="80%" width="80%" alt="Linux Hardening Lab"/>
+
+That concludes this lab.
+
+<h2>Conclusion</h2>
+
+This lab, while being fairly simple, taught me a lot of things. Let's list the things we covered:
+
+- System updating and upgrading.
+- Basic firewall setup.
+- Account creation, information, and security.
+- Adding a user to the sudo users.
+- Changing firewall rules
+- Controlling user accounts.
+
 
