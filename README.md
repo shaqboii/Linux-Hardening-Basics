@@ -27,3 +27,11 @@ sudo ufw status
 The first command enables the firewall. We then allow the firewall to receive SSH and HTTP traffic via ports 22 and 80. Finally, we print the status of the firewall.
 
 <img src="https://i.imgur.com/tP9YCnT.png" height="80%" width="80%" alt="Building Network Lab"/>
+
+Our firewall clearly shows that we can receive SSH and HTTP traffic from anywhere successfully. Let's move on to the next step.
+
+<h2>Step 3: Account Creation</h2>
+
+Before we create a new account, let's observe the ```/etc/passwd``` file. This file displays vital account information.
+
+<img src="https://i.imgur.com/rh9f3vQ.png" height="80%" width="80%" alt="Building Network Lab"/>
