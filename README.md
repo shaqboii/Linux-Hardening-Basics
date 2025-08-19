@@ -1,4 +1,4 @@
-# Linux-Hardening-Basics
+# System-Hardening-Basics
 
 This project demonstrates basic system hardening, setting up a basic firewall, account creation and controlling their privileges. I am using Ubuntu to complete this lab.
 
